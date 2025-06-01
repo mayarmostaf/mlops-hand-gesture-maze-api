@@ -8,15 +8,9 @@ import logging
 app = FastAPI()
 
 # Allow CORS for your frontend origin(s)
-origins = [
-    "http://127.0.0.1:5501",
-    "http://localhost:5501",
-    # Add other origins if needed, or use "*" for all (not recommended in production)
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins= ["http://127.0.0.1:5500"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -42,3 +36,4 @@ def predict(input: HandLandmarks):
     prediction = predict_class(input.landmarks)
     logging.info(f"Prediction result: {prediction}")
     return {"label": prediction}
+
