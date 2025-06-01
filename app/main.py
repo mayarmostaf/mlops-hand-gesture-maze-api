@@ -1,10 +1,27 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from prometheus_fastapi_instrumentator import Instrumentator
 from .schemas import HandLandmarks
 from .model import predict_class
 import logging
 
 app = FastAPI()
+
+# Allow CORS for your frontend origin(s)
+origins = [
+    "http://127.0.0.1:5501",
+    "http://localhost:5501",
+    # Add other origins if needed, or use "*" for all (not recommended in production)
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 Instrumentator().instrument(app).expose(app)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -24,4 +41,4 @@ def predict(input: HandLandmarks):
     logging.info(f"Received landmarks: {input.landmarks}")
     prediction = predict_class(input.landmarks)
     logging.info(f"Prediction result: {prediction}")
-    return {"prediction": prediction}
+    return {"label": prediction}
