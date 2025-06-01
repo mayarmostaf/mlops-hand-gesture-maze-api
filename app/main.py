@@ -35,5 +35,4 @@ def predict(input: HandLandmarks):
     logging.info(f"Received landmarks: {input.landmarks}")
     prediction = predict_class(input.landmarks)
     logging.info(f"Prediction result: {prediction}")
-    return {"label": prediction}
-
+    return {"prediction": prediction}
