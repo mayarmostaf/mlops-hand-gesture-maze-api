@@ -10,7 +10,11 @@ app = FastAPI()
 # Allow CORS for your frontend origin(s)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins= ["http://127.0.0.1:5500"], 
+    allow_origins=[
+        "http://127.0.0.1:5500",   # VSCode Live Server
+        "http://127.0.0.1:3000",   # python http.server
+        "https://mayarmostaf.github.io"  # GitHub Pages
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
