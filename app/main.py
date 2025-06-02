@@ -7,11 +7,16 @@ import logging
 
 app = FastAPI()
 
-# Allow CORS for your frontend origin(s)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow all
-    allow_credentials=False,  # disable credentials
+    allow_origins=[
+        "https://mayarmostaf.github.io",
+        "https://mayarmostaf.github.io/MLOPs-Final-Project",
+        "http://localhost:3000",
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+    ],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
