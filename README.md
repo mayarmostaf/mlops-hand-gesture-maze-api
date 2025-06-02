@@ -52,7 +52,7 @@ We collect and visualize the following:
 
 ### Grafana Dashboard Screenshots
 
-![Graphana_whole_dashboard](https://github.com/user-attachments/assets/922dcbc0-494f-49be-9dd6-cea7d9a4dde8)
+![Graphana_whole_dashboard](https://github.com/user-attachments/assets/1ef92aab-5ae5-4355-9148-445d6b69ea81)
 ![graphana_dashboard_part1](https://github.com/user-attachments/assets/3c7fe3f5-b2b5-4396-95ad-afa70850149d)
 ![graphana_dashboard_part2](https://github.com/user-attachments/assets/77f7b5cb-5a70-40ea-9c8c-90063c62acf5)
 
